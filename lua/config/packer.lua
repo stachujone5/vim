@@ -24,7 +24,9 @@ return require('packer').startup(function(use)
 		  }
 	  end
   }
-
+  use('neovim/nvim-lspconfig')
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
   use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
   use('theprimeagen/harpoon')
   use {
@@ -47,4 +49,6 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
+use('neovim/nvim-lspconfig')
 end)
+
