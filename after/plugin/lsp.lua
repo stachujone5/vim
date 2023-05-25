@@ -20,7 +20,11 @@ lsp.setup_nvim_cmp({
 
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
-  
+
+  vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
