@@ -25,7 +25,13 @@ null_ls.setup({
 
     if client.supports_method("textDocument/rangeFormatting") then
       vim.keymap.set("x", "<Leader>f", function()
-        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })local prettier = require("prettier")
+        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+      end, { buffer = bufnr, desc = "[lsp] format" })
+    end
+  end,
+})
+
+local prettier = require("prettier")
 
 prettier.setup({
   bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
@@ -43,8 +49,4 @@ prettier.setup({
     "typescriptreact",
     "yaml",
   },
-})
-      end, { buffer = bufnr, desc = "[lsp] format" })
-    end
-  end,
 })
