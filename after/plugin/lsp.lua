@@ -62,5 +62,6 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-	virtual_text = true,
+	signs = false,
+	virtual_text = false,
 })
