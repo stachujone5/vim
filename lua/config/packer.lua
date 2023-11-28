@@ -11,11 +11,25 @@ return require("packer").startup(function(use)
 	use({
 		"projekt0n/github-nvim-theme",
 		config = function()
-			require("github-theme").setup({
-				-- ...
-			})
+			require("github-theme").setup()
 
 			vim.cmd("colorscheme github_dark")
+		end,
+	})
+
+	-- Auto pair
+	use({
+		"m4xshen/autoclose.nvim",
+		config = function()
+			require("autoclose").setup()
+		end,
+	})
+
+	-- Comments
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
 		end,
 	})
 
@@ -73,4 +87,7 @@ return require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+
+	-- Copilot
+	use("github/copilot.vim")
 end)
