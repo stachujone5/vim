@@ -25,6 +25,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-j>"] = cmp.mapping.select_next_item(cmp_select_opts),
 })
 
+cmp_mappings["<Tab>"] = nil
+
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })

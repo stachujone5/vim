@@ -17,6 +17,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Auto tag html, tsx
+	use("windwp/nvim-ts-autotag")
+
 	-- Auto pair
 	use({
 		"m4xshen/autoclose.nvim",
@@ -81,6 +84,10 @@ return require("packer").startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+
+	-- Snippets
+	use("L3MON4D3/LuaSnip") --snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- Treesitter
 	use({
